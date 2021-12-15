@@ -1,0 +1,82 @@
+::-webkit-scrollbar {
+    width: 7px;
+    
+    position: absolute;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  .pr--7 {
+      margin-right: -7px;
+  }
+
+  #list__contact {
+      height: calc(100vh - 98px);
+  }
+
+  .max-w-180 {
+      max-width: 180px;
+  }
+
+  #list__message {
+    height: calc(100vh - 56px);
+  }
+
+  @media (min-width: 768px) {
+    #list__message {
+        height: calc(100vh - 156px);
+    }
+
+    #txtMessage {
+      max-height: 100px !important;
+    }
+    .my__frame--chat {
+      width: calc(100vw - 385px);
+    }
+  }
+
+  #txtMessage {
+      max-height: 50px;
+      width: 95%;
+  }
+
+.my__list--chat div {
+    max-width: 70%;
+    width: fit-content;
+}
+
+.my__min--w {
+    min-width: 44px;
+}
+
+.my__close {
+  width: 15px; 
+  height: 15px; 
+  text-align: center; 
+  background-color: grey; 
+  cursor: pointer; 
+  line-height: 12px; 
+  font-size: 12px; 
+  border-radius: 50%; 
+  color: white; 
+  font-weight: bold;
+  display: none;
+}
+
+#txtSearch:focus + .my__close {
+  display: block;
+}

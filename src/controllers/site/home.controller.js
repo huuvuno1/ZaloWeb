@@ -1,7 +1,7 @@
 const HomeController = {}
 
 HomeController.homePage = (req, res) => {
-    res.send("this is home page")
+    res.render('site/homepage')
 }
 
 module.exports = HomeController

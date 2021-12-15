@@ -1,0 +1,46 @@
+<div class="flex h-12 cursor-pointer" id="type">
+    <a href="/login" class="flex-1 text-center uppercase text-xs relative text-blue-600">
+        Đăng nhập
+        <div class="my_seperate"></div>
+    </a>
+    <a href="/register" class="flex-1 text-center uppercase text-xs relative font-bold">
+        Đăng ký
+    <!-- show if div is selected -->
+    <div class="my__select"></div>
+    </a>
+</div>
+
+<!-- form register -->
+<div class="px-4 pb-1">
+    <div class="pt-5 pb-1 border-b mb-2 ">
+        <i class='bx bx-user text-gray-500 text-sm pr-2 '></i>
+        <input type="text" class="outline-none w-90" id="fullname" placeholder="Họ tên">
+    </div>
+    <div class="pt-5 pb-1 border-b border-green-400 mb-2 relative">
+        <i class='bx bx-mobile-alt text-gray-500 text-sm pr-2'></i>
+        <input type="text" class="outline-none w-90" id="email" placeholder="Email hoặc số điện thoại">
+        <span class="text-red-500 cursor-pointer select-none text-xs absolute right-0 bottom-2">Lấy mã</span>
+    </div>
+    <div class="pt-5 pb-1">
+        <span class='text-blue-400 text-sm pr-2'>Nhập mã:</span>
+        <input type="text" class="outline-none w-36 pl-2 border-b mb-2 w-90" style="letter-spacing: 0.8rem; width: 9rem;" placeholder="xxxxxx" maxlength="6">
+        <span>✔</span>
+    </div>
+    <div class="pb-1 text-red-500 text-sm">
+        MAil bị trung
+    </div>
+    <div class="pt-4 pb-1 border-b mb-2">
+        <i class='bx bxs-lock text-gray-500 text-sm pr-2' ></i>
+        <input type="text" class="outline-none w-9/12 w-90" id="password" placeholder="Mật khẩu">
+    </div>
+    <div class="pt-4 pb-1 border-b mb-2">
+        <i class='bx bxs-lock text-gray-500 text-sm pr-2' ></i>
+        <input type="text" class="outline-none w-9/12 w-90" id="repassword" placeholder="Nhập lại mật khẩu">
+    </div>
+    <div>
+        <button class="bg-blue-300 w-full mt-4 h-11 text-white rounded mb-2" id="btn_register">Đăng ký</button>
+    </div>
+    <p class="text-center m-4">
+        <a href="#">Quên mật khẩu?</a>
+    </p>
+</div>

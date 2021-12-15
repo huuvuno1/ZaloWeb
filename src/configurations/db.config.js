@@ -1,7 +1,12 @@
 const mongoose = require('mongoose')
 
 module.exports = () => {
-    const mongoDbUrl = `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_POST}/${process.env.MONGO_DB}`
+    const MONGO_HOST = process.env.MONGO_HOST || 'localhost'
+    const MONGO_PORT = process.env.MONGO_PORT || 27017
+    const MONGO_DB = process.env.MONGO_DB || "AAAAAAAA"
+
+    const mongoDbUrl = `mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}`
+    console.log(mongoDbUrl);
     console.log('connecting ' + mongoDbUrl)
     mongoose.Promise = global.Promise
     mongoose
@@ -9,7 +14,7 @@ module.exports = () => {
             useNewUrlParser: true
         })
         .then(() => {
-            console.log(`Successfully connected to the database: ${process.env.MONGO_DB}`)
+            console.log(`Successfully connected to the database: ${MONGO_DB}`)
         })
         .catch(err => {
             console.log(`Could not connect to the database. Exiting now...\n${err}`)
