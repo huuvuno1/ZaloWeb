@@ -49,19 +49,20 @@
                 <!-- box option -->
                 <div class="px-2 py-4 flex">
                     <!-- search -->
-                    <div class="flex-1 border-b border-gray-300 flex items-center relative">
+                    <label for="show-result" class="flex-1 border-b border-gray-300 flex items-center relative">
                         <i class='bx bx-search mr-2 cursor-pointer'></i>
                         <input type="text" placeholder="Tìm kiếm" id="txtSearch" class="outline-none flex-1" >
                         <span class="my__close">x</span>
-                        <div class="absolute top-7 left-0 right-0 bg-gray-100"> 
-                            ok
-                        </div>
-                    </div>
+                    </label>
                     
                     <!-- create group -->
                     <div class="w-10 text-right">
                         <i class='bx bx-group cursor-pointer text-xl' title="Tạo nhóm chat"></i>
                     </div>
+                </div>
+                <input type="checkbox" name="show-result" id="show-result">
+                <div class="bg-gray-100 relative" style="top: -15px;"> 
+                    ok
                 </div>
                 <!-- box contact -->
                 <div class="">
@@ -748,5 +749,12 @@
             </div>
         </div>
     </div>
+    <script src="/assets/js/socket.io/socket.io.js"></script>
+    <script>
+    var socket = io.connect('http://localhost:3000')
+    socket.on('reload', () => {
+        console.log('ldsakf')
+    })
+    </script>
 </body>
 </html>
