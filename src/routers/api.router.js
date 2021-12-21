@@ -1,7 +1,11 @@
 const express = require('express')
 const AuthApi = require('../api/auth/auth.api')
-const ApiRouter = express.Router()
+const router = express.Router()
+const path = '/api/v1'
 
-ApiRouter.post('/login', AuthApi.login)
+router.post('/login', AuthApi.login)
 
-module.exports = ApiRouter
+module.exports = {
+    path,
+    router
+}

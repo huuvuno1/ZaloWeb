@@ -2,6 +2,30 @@
     const $ = document.querySelector.bind(document)
     const $$ = document.querySelectorAll.bind(document)
 
+    const popupCenter = ({url, title, w, h}) => {
+        // Fixes dual-screen position                             Most browsers      Firefox
+        const dualScreenLeft = window.screenLeft !==  undefined ? window.screenLeft : window.screenX;
+        const dualScreenTop = window.screenTop !==  undefined   ? window.screenTop  : window.screenY;
+    
+        const width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+        const height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+    
+        const systemZoom = width / window.screen.availWidth;
+        const left = (width - w) / 2 / systemZoom + dualScreenLeft
+        const top = (height - h) / 2 / systemZoom + dualScreenTop
+        const newWindow = window.open(url, title, 
+          `
+          scrollbars=yes,
+          width=${w / systemZoom}, 
+          height=${h / systemZoom}, 
+          top=${top}, 
+          left=${left}
+          `
+        )
+    
+        if (window.focus) newWindow.focus();
+    }
+
     function getFormLogin() {
         return {
             'username': $('#username').value,
@@ -40,4 +64,16 @@
             console.log(getFormRegister())
         })
     }
+
+    $('#btn_signInWithGG').addEventListener('click', e => {
+        popupCenter({
+            url: 'http://localhost:3000/auth/google/',
+            title: 'login gg',
+            w: 500,
+            h: 500
+        })
+    })
+
+
+    
 })()

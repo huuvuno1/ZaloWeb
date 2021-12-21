@@ -1,7 +1,11 @@
 const express = require('express')
 const AdminController = require('../controllers/admin/admin.controller')
-const AdminRouter = express.Router()
+const router = express.Router()
+const path = '/admin'
 
-AdminRouter.get('/', AdminController.homePage)
+router.get('/', AdminController.homePage)
 
-module.exports = AdminRouter
+module.exports = {
+    path,
+    router
+}
