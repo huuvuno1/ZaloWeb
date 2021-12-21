@@ -7,6 +7,7 @@ module.exports = () => {
 
     // const mongoDbUrl = `mongodb://${MONGO_HOST}:${MONGO_PORT}/${MONGO_DB}`
     const mongoDbUrl = `mongodb://mongo:n5vEgvQO0MPPWzCcPHLq@containers-us-west-2.railway.app:5455`
+    
     console.log(mongoDbUrl);
     console.log('connecting ' + mongoDbUrl)
     mongoose.Promise = global.Promise
