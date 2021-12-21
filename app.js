@@ -9,6 +9,8 @@ const connectDatabase = require('./src/configurations/db.config')
 const app = ExpressApp.getInstance()
 const PORT = process.env.SERVER_PORT || 3000
 
+console.log('nguyen klsdjflsdkf vu')
+
 dotevn.config()
 connectDatabase()
 
@@ -20,13 +22,11 @@ app.use(cookieParser())
 app.set('views', path.join(__dirname, './src/views/'))
 app.set('view engine', 'ejs')
 
-
 // config router
 require('./src/routers/router')
 
 // config socket.io
 require('./src/websocket/index.socket')
-
 
 HttpApp.getInstance().listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`)

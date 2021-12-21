@@ -8,4 +8,4 @@ const AuthMiddleware = require('../middleware/Auth.middleware')
 
 router.use('/api/v1', ApiRouter)
 router.use('/admin', AdminRouter)
-router.use('/', AuthMiddleware, SiteRouter)
+router.use('/', SiteRouter)
