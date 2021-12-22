@@ -14,4 +14,23 @@ AuthController.registerPage = (req, res) => {
     })
 }
 
+AuthController.successAuth = (req, res) => {
+    console.log('test', req.user)
+    
+    res
+    .render('site/authProcess', {
+        status: true
+    })
+}
+
+AuthController.failAuth = (req, res) => {
+    console.log('test', req.user)
+    
+    res
+    .render('site/authProcess', {
+        status: false
+    })
+}
+
+
 module.exports = AuthController

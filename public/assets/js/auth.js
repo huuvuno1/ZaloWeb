@@ -2,7 +2,7 @@
     const $ = document.querySelector.bind(document)
     const $$ = document.querySelectorAll.bind(document)
 
-    const popupCenter = ({url, title, w, h}) => {
+    const popupCenter = function({url, title, w, h}) {
         // Fixes dual-screen position                             Most browsers      Firefox
         const dualScreenLeft = window.screenLeft !==  undefined ? window.screenLeft : window.screenX;
         const dualScreenTop = window.screenTop !==  undefined   ? window.screenTop  : window.screenY;
@@ -22,8 +22,20 @@
           left=${left}
           `
         )
-    
+        
+        window.callbackAuth = function(result) {
+            if (result) {
+                window.location.href = '/'
+            } else {
+                let errDom = document.createElement('div')
+                errDom.classList.add('pt-5', 'pb-1')
+                errDom.innerHTML = `<h3 class="text-red-500 text-center font-bold" >Xác thực thất bại</h3>`
+                $('#wrap_form').insertBefore(errDom, $('#wrap_form').firstChild);
+            }
+        }
+
         if (window.focus) newWindow.focus();
+        return newWindow
     }
 
     function getFormLogin() {
@@ -66,12 +78,13 @@
     }
 
     $('#btn_signInWithGG').addEventListener('click', e => {
-        popupCenter({
+        const popup = popupCenter({
             url: 'http://localhost:3000/auth/google/',
             title: 'login gg',
             w: 500,
             h: 500
         })
+        console.log(popup)
     })
 
 
