@@ -4,7 +4,7 @@
   "description": "Clone zalo web",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "author": "Nguyễn Hữu Vũ",
   "license": "ISC",
