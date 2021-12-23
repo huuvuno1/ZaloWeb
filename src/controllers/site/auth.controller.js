@@ -1,6 +1,8 @@
 const AuthController = {}
 
 AuthController.loginPage = (req, res) => {
+    console.log('lksjf vao login')
+
     res.render('site/authentication', {
         page: "login",
         title: "Đăng nhập vào zalo"

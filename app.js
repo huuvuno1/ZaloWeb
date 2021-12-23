@@ -1,6 +1,7 @@
+require('dotenv').config()
 const ExpressApp = require('./src/singleton/Express')
 const HttpApp = require('./src/singleton/Http')
-const dotevn = require('dotenv')
+
 const express = require('express')
 const helmet = require('helmet')
 const path = require('path')
@@ -12,7 +13,7 @@ const PORT = process.env.SERVER_PORT || 3000
 const session = require('express-session')
 const passport = require('./src/configurations/passport/Passport.config')
 
-dotevn.config()
+
 connectDatabase()
 
 

@@ -8,6 +8,7 @@ const User = Schema({
     phoneNumber: String,
     password: String,
     avatar: String,
+    active: Boolean,
     verify: {
         code: String,
         used: Boolean,
