@@ -28,6 +28,6 @@ require('./src/routers/router')
 // config socket.io
 require('./src/websocket/index.socket')
 
-HttpApp.getInstance().listen(PORT, () => {
+HttpApp.getInstance().listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port: ${PORT}`)
 })
