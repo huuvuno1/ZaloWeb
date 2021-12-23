@@ -7,7 +7,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const connectDatabase = require('./src/configurations/db.config')
 const app = ExpressApp.getInstance()
-const PORT = process.env.SERVER_PORT || 3000
+const PORT = process.env.PORT || 3000
 
 console.log('nguyen klsdjflsdkf vu')
 
